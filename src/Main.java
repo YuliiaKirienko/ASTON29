@@ -1,4 +1,3 @@
-import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         //1.
@@ -10,51 +9,100 @@ public class Main {
         //4.
         compareNumbers();
         //5.
-        System.out.println(isSumBetween10And20(4, 10));
+        SumAB();
         //6.
-        checkNumber(50);
+        NumberOne();
         //7.
-        System.out.println(isNegative(13));  // false
+        NumberTwo();
         //8.
-        printStringNTimes("Ученье - свет! ", 3);
+        StringAndNumber();
         //9.
-        int year = 1984;
-        boolean isLeapYear = isLeapYear(year);
-        System.out.println(year + " - високосный год: " + isLeapYear);
+        LeapYear();
+
         //10.
-        int[] binaryArray = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        System.out.println("Original array: " + Arrays.toString(binaryArray));
-        invertArray(binaryArray);
-        System.out.println("Inverted array: " + Arrays.toString(binaryArray));
-        //11.
-        int[] hundredArray = new int[100];
-        fillArray(hundredArray);
-        System.out.println("Array filled with 1 to 100: " + Arrays.toString(hundredArray));
-        //12.
-        int[] array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        System.out.println("Original array: " + Arrays.toString(array));
-        multiplyLessThan6(array);
-        System.out.println("Modified array: " + Arrays.toString(array));
-        //13.
-        int[][] squareArray = new int[5][5];
-        fillDiagonal(squareArray);
-        for (int i = 0; i < squareArray.length; i++) {
-            for (int j = 0; j < squareArray[i].length; j++) {
-                System.out.print(squareArray[i][j] + " ");
-            }
-            System.out.println();
+        int[] numbers = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        System.out.print("До: ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
         }
+        System.out.println();
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == 0) {
+                numbers[i] = 1;
+            }
+            else {
+                numbers[i] = 0;
+            }
+
+        }
+        System.out.print("После: ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println();
+
+        //11.
+        int[] numbersnew = new int[100];
+        for (int i = 0; i < 100; i++) {
+        numbersnew[i] = i + 1;
+        }
+        System.out.println("Результат:");
+        for (int i = 0; i < 100; i++) {
+            System.out.print(numbersnew[i] + " ");
+        }
+        System.out.println();
+
+        //12.
+        int[] numbersThree = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+
+        System.out.println("До:");
+        for (int i = 0; i < numbersThree.length; i++) {
+            System.out.print(numbersThree[i] + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < numbersThree.length; i++) {
+            if (numbersThree[i] < 6) {
+                numbersThree[i] = numbersThree[i] * 2;
+            }
+        }
+
+        System.out.println("После:");
+        for (int i = 0; i < numbersThree.length; i++) {
+            System.out.print(numbersThree[i] + " ");
+        }
+        System.out.println();
+
+
+
+       //13.
+        int n = 4;
+        int[][] cvadrat = new int[n][n];
+        for (int i = 0; i < n; i++) {
+        cvadrat[i][i] = 1;
+        }
+        for (int row = 0; row < n; row++) {
+        for (int col = 0; col < n; col++) {
+        System.out.print(cvadrat[row][col] + " ");
+            }
+        System.out.println();
+        }
+
         //14.
         int len = 4;
         int initialValue = 18;
-        int[] myArray = createInitializedArray(len, initialValue);
+        int[] array = createArray(len, initialValue);
 
-        System.out.println("Initialized array: " + Arrays.toString(myArray));
-
-
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
     }
 
+
     //1.1.
+
     public static void printThreeWords() {
         System.out.println("Orange");
         System.out.println("Banana");
@@ -64,24 +112,23 @@ public class Main {
     //2.1.
     public static void checkSumSign() {
         int a = 105;
-        int b = -6;
+        int b = 54;
         int sum = a + b;
-
         if (sum >= 0) {
             System.out.println("Сумма положительная");
-        } else {
+        } else  {
             System.out.println("Сумма отрицательная");
         }
     }
 
     //3.1.
     public static void printColor() {
-        int value = 13;
+        int value = 122;
         if (value <= 0) {
             System.out.println("Красный");
         } else if (value > 0 && value <= 100) {
             System.out.println("Желтый");
-        } else {
+        } else if (value > 100) {
             System.out.println("Зеленый");
         }
     }
@@ -89,7 +136,6 @@ public class Main {
     public static void compareNumbers() {
         int a = 19;
         int b = 8;
-
         if (a >= b) {
             System.out.println("а >= b");
         } else {
@@ -98,79 +144,73 @@ public class Main {
     }
 
     //5.1.
-    public static boolean isSumBetween10And20(int a, int b) {
+    public static boolean SumAB() {
+        int a = 4;
+        int b = 11;
         int sum = a + b;
-        return sum >= 10 && sum <= 20;
-    }
-
-    //6.1.
-    public static void checkNumber(int number) {
-        if (number >= 0) {
-            System.out.println("Число " + number + " положительное");
+        if (sum >= 10 && sum <= 20) {
+            System.out.println("true");
+            return true;
         } else {
-            System.out.println("Число " + number + " отрицательное");
+            System.out.println("false");
+            return false;
+        }
+    }
+    //6.1.
+    public static void NumberOne() {
+        int number = - 25;
+        if (number >= 0) {
+            System.out.println("Положительное");
+        } else {
+            System.out.println("Отрицательное");
         }
     }
 //7.1.
-    public static boolean isNegative(int number) {
-        return number < 0;
+    public static boolean NumberTwo() {
+        int number = 16;
+        if (number < 0) {
+            System.out.println("true");
+            return true;
+        } else {
+            System.out.println("false");
+            return false;
+        }
     }
 
     //8.1
-    public static void printStringNTimes(String str, int n) {
+    public static void StringAndNumber() {
+        String str = "Мама мыла пилораму ";
+        int n = 3;
         for (int i = 0; i < n; i++) {
             System.out.println(str);
         }
     }
     //9.1
-    public static boolean isLeapYear(int year) {
+    public static boolean LeapYear() {
+        int year = 1984;
         if (year % 4 == 0) {
             if (year % 100 == 0) {
                 return year % 400 == 0;
             }
+            System.out.println (year + "- високосный год");
             return true;
         }
-        return false;
+        System.out.println (year + "- НЕ високосный год");
+            return false;
     }
 
-    //10.1
-
-    public static void invertArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (array[i] == 0) ? 1 : 0;
-        }
-    }
-
-    //11.1
-    public static void fillArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = i + 1;
-        }
-    }
-
-    //12.1
-    public static void multiplyLessThan6(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < 6) {
-                array[i] *= 2; // Multiply by 2 if less than 6
-            }
-        }
-    }
-
-    //13.1
-    public static void fillDiagonal(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            array[i][i] = 1; // Fill diagonal elements with 1
-        }
-    }
+    //10.1 в 10.
+    //11.1 в 11.
+    //12.1 в 12.
+    //13.1 в 13.
 
     //14.1
-    public static int[] createInitializedArray(int len, int initialValue) {
-        int[] array = new int[len]; // Create an array of length 'len'
+    public static int[] createArray(int len, int initialValue) {
+        int[] arrayTwo = new int[len];
         for (int i = 0; i < len; i++) {
-            array[i] = initialValue; // Set each element to 'initialValue'
+            arrayTwo[i] = initialValue;
         }
-        return array;
+        return arrayTwo;
     }
 
 
