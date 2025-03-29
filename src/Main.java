@@ -109,7 +109,7 @@ public class Main {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
-            System.out.println();
+        System.out.println();
     }
 
 
@@ -182,16 +182,17 @@ public class Main {
             System.out.println(str);
         }
     }
+
     //9.1
     public static boolean LeapYear(int year) {
         if (year % 4 == 0) {
-        if (year % 100 == 0) {
-        return year % 400 == 0;
+            if (year % 100 == 0) {
+                return year % 400 == 0;
+            }
+            return true;
         }
-         return true;
-         }
-         return false;
-        }
+        return false;
+    }
     //10.1 в 10.
     //11.1 в 11.
     //12.1 в 12.
