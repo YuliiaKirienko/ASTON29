@@ -1,4 +1,4 @@
-// задача 1
+// задача 1.
 import java.time.LocalDate;
 
 
