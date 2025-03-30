@@ -1,13 +1,13 @@
-// задача 1.1
+// задача 1
 import java.time.LocalDate;
 
 public class Product {
-    private String name;
-    private LocalDate productionDate;
-    private String manufacturer;
-    private String countryOfOrigin;
-    private double price;
-    private boolean bookingStatus;
+    private final String name;
+    private final LocalDate productionDate;
+    private final String manufacturer;
+    private final String countryOfOrigin;
+    private final double price;
+    private final boolean bookingStatus;
 
     public Product(String name, LocalDate productionDate, String manufacturer, String countryOfOrigin, double price, boolean bookingStatus) {
         this.name = name;
