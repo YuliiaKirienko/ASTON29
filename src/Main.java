@@ -1,4 +1,5 @@
-    // задание 1.
+// задание 1.
+
 import java.time.LocalDate;
 
 
@@ -11,7 +12,7 @@ public class Main {
         product1.printProductInfo();
         System.out.println();
 
-    // задание 2.
+        // задание 2.
         Product[] productsArray = new Product[5];
 
         productsArray[0] = new Product("Очки", LocalDate.of(2021, 10, 11), "NeoLook", "Южная Корея", 11000.00, true);
@@ -20,9 +21,11 @@ public class Main {
         productsArray[3] = new Product("Ноутбук", LocalDate.of(2024, 02, 14), "Lenovo", "Китай", 30000.00, true);
         productsArray[4] = new Product("Книга", LocalDate.of(2025, 01, 15), "ООО Азбука+", "Россия", 99.00, false);
 
-    // задание 3.
+        //задание 3.
+
         Park myPark = new Park("Наш парк");
         Park.Attraction ferrisWheel = myPark.new Attraction("Колесо обозрения", "10:00 - 22:00", 500);
+
 
     }
 }
