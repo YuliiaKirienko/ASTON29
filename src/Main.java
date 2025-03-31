@@ -3,36 +3,22 @@ public class Main {
         //1.
         printThreeWords();
         //2.
-        String result = checkSumSign();
-        System.out.println(result);
+        checkSumSign();
         //3.
-        String result3 = printColor();
-        System.out.println(result3);
+        printColor();
         //4.
-        String result4 = compareNumbers();
-        System.out.println(result4);
+        compareNumbers();
+
         //5.
-        int a = 4;
-        int b = 11;
-        boolean result5 = SumAB(a, b);
-        System.out.println(result5);
+        System.out.println(sumAB(10, -69));
         //6.
-        int number6 = -25;
-        NumberOne(number6);
+        numberOne(65);
         //7.
-        int number7 = 9;
-        boolean result7 = NumberTwo(number7);
-        System.out.println(result7);
+        System.out.println(numberTwo(-9));
         //8.
-        String str = "Мама мыла пилораму";
-        int n = 3;
-        StringAndNumber(str, n);
+        stringAndNumber("Шла Саша по шоссе... ", 6);
         //9.
-        int year = 1984;
-        boolean result9 = LeapYear(year);
-        System.out.println(result9);
-
-
+        System.out.println(leapYear(1984));
         //10.
         int[] numbers = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.print("До: ");
@@ -89,14 +75,15 @@ public class Main {
 
 
         //13.
-        int n13 = 4;
-        int[][] cvadrat = new int[n][n];
+        int n = 4;
+        int[][] matrix = new int[n][n];
         for (int i = 0; i < n; i++) {
-            cvadrat[i][i] = 1;
+            matrix[i][i] = 1;
         }
-        for (int row = 0; row < n; row++) {
-            for (int col = 0; col < n; col++) {
-                System.out.print(cvadrat[row][col] + " ");
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
@@ -122,48 +109,48 @@ public class Main {
     }
 
     //2.1.
-    public static String checkSumSign() {
+    public static void checkSumSign() {
         int a = 105;
         int b = 54;
         int sum = a + b;
         if (sum >= 0) {
-            return "Сумма положительная";
+            System.out.println("Сумма положительная");
         } else {
-            return "Сумма отрицательная";
+            System.out.println("Сумма отрицательная");
         }
     }
 
     //3.1.
-    public static String printColor() {
+    public static void printColor() {
         int value = 122;
         if (value <= 0) {
-            return "Красный";
+            System.out.println("Красный");
         } else if (value <= 100) {
-            return "Желтый";
+            System.out.println("Жёлтый");
         } else {
-            return "Зеленый";
+            System.out.println("Зеленый");
         }
     }
 
     //4.1
-    public static String compareNumbers() {
+    public static void compareNumbers() {
         int a = 19;
         int b = 8;
         if (a >= b) {
-            return "а >= b";
+            System.out.println("а >= b");
         } else {
-            return "а < b";
+            System.out.println("а < b");
         }
     }
 
     //5.1.
-    public static boolean SumAB(int num1, int num2) {
+    public static boolean sumAB(int num1, int num2) {
         int sum = num1 + num2;
         return sum >= 10 && sum <= 20;
     }
 
     //6.1.
-    public static void NumberOne(int number) {
+    public static void numberOne(int number) {
         if (number >= 0) {
             System.out.println("Положительное");
         } else {
@@ -172,19 +159,20 @@ public class Main {
     }
 
     //7.1.
-    public static boolean NumberTwo(int number7) {
+    public static boolean numberTwo(int number7) {
         return number7 < 0;
     }
 
     //8.1
-    public static void StringAndNumber(String str, int n) {
+    public static void stringAndNumber(String str, int n) {
+
         for (int i = 0; i < n; i++) {
             System.out.println(str);
         }
     }
 
     //9.1
-    public static boolean LeapYear(int year) {
+    public static boolean leapYear(int year) {
         if (year % 4 == 0) {
             if (year % 100 == 0) {
                 return year % 400 == 0;
@@ -193,11 +181,11 @@ public class Main {
         }
         return false;
     }
+
     //10.1 в 10.
     //11.1 в 11.
     //12.1 в 12.
-    //13.1 в 13.
-
+    //13.1 в 13
     //14.1
     public static int[] createArray(int len, int initialValue) {
         int[] arrayTwo = new int[len];
