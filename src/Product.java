@@ -1,7 +1,9 @@
-// задача 1
+// задание 1
+
 import java.time.LocalDate;
 
 public class Product {
+
     private final String name;
     private final LocalDate productionDate;
     private final String manufacturer;
@@ -26,4 +28,5 @@ public class Product {
         System.out.println("Цена: " + this.price);
         System.out.println("Состояние бронирования покупателем: " + (this.bookingStatus ? "Забронирован" : "Доступен"));
     }
+
 }
