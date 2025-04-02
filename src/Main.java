@@ -124,7 +124,6 @@ public class Main {
 
     //8.1
     public static void stringAndNumber(String str, int n) {
-
         for (int i = 0; i < n; i++) {
             System.out.println(str);
         }
