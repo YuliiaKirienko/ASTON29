@@ -19,30 +19,47 @@ public class Main {
         //9.
         System.out.println(leapYear(1984));
         //10.
-        int[] myArray = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        System.out.print("До: ");
-        for (int i = 0; i < myArray.length; i++) {
-            System.out.print(myArray[i] + " ");
-        }
-        System.out.println();
-        massiv10(myArray);
-        //11.
-        System.out.println("Результат: ");
-        massiv11(100);
-        //12.
-        int[] muArray12 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int[] array10 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.println("До:");
-        for (int i = 0; i < muArray12.length; i++) {
-            System.out.print(muArray12[i] + " ");
+        System.out.println(arrayToString(array10));
+        System.out.println("После:");
+        System.out.println(arrayToString(invertArray(array10)));
+        //11.
+        System.out.println("100 чисел:");
+        System.out.println(convertArrayToString(fillArrayWithNumbers()));
+        //12.
+        int[] array12 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println("До:");
+        System.out.println(arrayToString(array12));
+        System.out.println("После:");
+        System.out.println(arrayToString(processArray(array12)));
+
+        //13
+        int n = 4;
+        int[][] matrix = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            matrix[i][i] = 1;
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        //14
+        int len = 4;
+        int initialValue = 18;
+        int[] array = createArray(len, initialValue);
+
+        System.out.print("Массив: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
         }
         System.out.println();
-        System.out.println("После: "); // Add this line
-        massiv12(muArray12);
-        //13
-        massiv13();
-        //14
-        massiv14();
     }
+
 
     //1.1.
     public static void printThreeWords() {
@@ -126,69 +143,61 @@ public class Main {
     }
 
     //10.1
-    public static void massiv10(int[] arr) {
-        System.out.print("После: ");
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (arr[i] > 0) ? 0 : 1;
-            System.out.print(arr[i] + " ");
+    public static int[] invertArray(int[] inputArray) {
+        int[] result = new int[inputArray.length];
+        for (int i = 0; i < inputArray.length; i++) {
+            result[i] = inputArray[i] == 0 ? 1 : 0;
         }
-        System.out.println();
+        return result;
+    }
+
+    public static String arrayToString(int[] array) {
+        StringBuilder sb = new StringBuilder();
+        for (int value : array) {
+            sb.append(value).append(" ");
+        }
+        return sb.toString().trim();
     }
 
     //11.1
-    public static void massiv11(int size) {
-        int[] fillArr = new int[size];
-        for (int i = 0; i < fillArr.length; i++) {
-            fillArr[i] = i + 1;
-            System.out.print(fillArr[i] + " ");
+    public static int[] fillArrayWithNumbers() {
+        int[] numbers = new int[100];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i + 1;
         }
+        return numbers;
     }
+
+    public static String convertArrayToString(int[] array) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            builder.append(array[i]);
+            // Добавляем пробел, если не последний элемент
+            if (i < array.length - 1) {
+                builder.append(" ");
+            }
+        }
+        return builder.toString();
+    }
+
 
     //12.1
-    public static void massiv12(int[] myArray12) {
-        for (int i = 0; i < myArray12.length; i++) {
-            if (myArray12[i] < 6) {
-                myArray12[i] = myArray12[i] * 2;
+    public static int[] processArray(int[] arr) {
+        int[] result = arr.clone();
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] < 6) {
+                result[i] *= 2;
             }
-            System.out.print(myArray12[i] + " ");
         }
-        System.out.println();
-    }
-
-    //13.1
-    public static void massiv13() {
-        int size = 5;
-        int[][] squareArray = new int[size][size];
-        for (int i = 0; i < size; i++) {
-            squareArray[i][i] = 1;
-        }
-        System.out.println("Квадрат: ");
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                System.out.print(squareArray[i][j] + " ");
-            }
-            System.out.println();
-        }
+        return result;
     }
 
     //14.1
-    public static void massiv14() {
-        int len = 4;
-        int initialValue = 81;
-        int[] array = createArray(len, initialValue);
-        System.out.println("Массив: ");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
-        System.out.println();
-    }
-
     public static int[] createArray(int len, int initialValue) {
-        int[] array = new int[len];
+        int[] arrayTwo = new int[len];
         for (int i = 0; i < len; i++) {
-            array[i] = initialValue;
+            arrayTwo[i] = initialValue;
         }
-        return array;
+        return arrayTwo;
     }
 }
-
