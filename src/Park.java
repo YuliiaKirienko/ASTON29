@@ -1,8 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Park {
     private String name;
+    private List<Attraction> attractions = new ArrayList<>(); // Здесь добавила хранилище аттракционов
 
     public Park(String name) {
         this.name = name;
+    }
+
+    // метод для добавления аттракциона
+    public void addAttraction(Attraction attraction) {
+        attractions.add(attraction);
+    }
+
+    public void printAllAttractions() {
+        System.out.println("Аттракционы в парке '" + name + "':");
+        for (Attraction attraction : attractions) {
+            attraction.printAttractionInfo();
+            System.out.println("--------------------");
+        }
     }
 
     public class Attraction {
