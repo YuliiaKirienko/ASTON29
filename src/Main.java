@@ -25,7 +25,9 @@ public class Main {
 
         Park myPark = new Park("Наш парк");
         Park.Attraction ferrisWheel = myPark.new Attraction("Колесо обозрения", "10:00 - 22:00", 500);
-
-
+        Park.Attraction bungee = myPark.new Attraction("Тарзанка", "10:00 - 22:00", 1000);
+        myPark.addAttraction(ferrisWheel);
+        myPark.addAttraction(bungee);
+        myPark.printAllAttractions();
     }
 }
