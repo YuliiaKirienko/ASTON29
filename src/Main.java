@@ -1,42 +1,13 @@
 public class Main {
-    public static void main(String[] args) {
-        //1.
-        printThreeWords();
-        //2.
-        checkSumSign();
-        //3.
-        printColor();
-        //4.
-        compareNumbers();
-        //5.
-        SumAB();
-        //6.
-        NumberOne();
-        //7.
-        NumberTwo();
-        //8.
-        StringAndNumber();
-        //9.
-        LeapYear();
+    p public static void main(String[] args) {
 
-        //10.
-        int[] numbers = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        System.out.print("До: ");
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
-        }
-        System.out.println();
+        Dog dog1 = new Dog("Пылесос");
+        Dog dog2 = new Dog("Гвоздик");
+        Cat cat1 = new Cat("Веник");
+        Cat cat2 = new Cat("Бублик");
+        Cat cat3 = new Cat("Керасин");
+        Cat cat4 = new Cat("Шерлок");
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == 0) {
-                numbers[i] = 1;
-            }
-            else {
-                numbers[i] = 0;
-            }
-
-        }
-        System.out.print("После: ");
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }
