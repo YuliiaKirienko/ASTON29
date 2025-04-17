@@ -1,8 +1,9 @@
+//Задание 2
 public class Rectangle implements GeometricShape {
-    private final double width;
-    private final double height;
-    private final String fillColor;
-    private final String borderColor;
+    private double width;
+    private double height;
+    private String fillColor;
+    private String borderColor;
 
     public Rectangle(double width, double height, String fillColor, String borderColor) {
         this.width = width;
@@ -12,13 +13,13 @@ public class Rectangle implements GeometricShape {
     }
 
     @Override
-    public double calculateArea() {
-        return width * height;
+    public double calculatePerimeter() {
+        return 2 * (width + height);
     }
 
     @Override
-    public double calculatePerimeter() {
-        return 2 * (width + height);
+    public double calculateArea() {
+        return width * height;
     }
 
     @Override

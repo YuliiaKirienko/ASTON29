@@ -1,3 +1,4 @@
+//Задание 2
 public interface GeometricShape {
     double calculateArea();
 

@@ -1,3 +1,4 @@
+//Задание 1
 public class Bowl {
     private int food;
 

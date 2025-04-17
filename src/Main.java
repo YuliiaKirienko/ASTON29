@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+//Задание 1-2
 public class Main {
     public static void main(String[] args) {
         // Задача 1.
@@ -61,7 +61,7 @@ public class Main {
 
 
         // Задача 2.
-        GeometricShape circle = new Circle(7, "Жёлтый", "Фиолетовый");
+        GeometricShape circle = new Circle(2.5, "Жёлтый", "Фиолетовый");
         GeometricShape rectangle = new Rectangle(9, 4, "Красный", "Белый");
         GeometricShape triangle = new Triangle(3, 4, 5, "Синий", "Чёрный");
 

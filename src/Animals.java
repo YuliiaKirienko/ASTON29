@@ -1,3 +1,4 @@
+// задание 1
 abstract class Animal {
     protected String name;
     private static int totalCount = 0;

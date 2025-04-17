@@ -1,3 +1,4 @@
+//Задание 2
 public class Circle implements GeometricShape {
     private final double radius;
     private final String fillColor;

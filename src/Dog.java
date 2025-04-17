@@ -1,3 +1,4 @@
+//Задание 1
 public class Dog extends Animal {
     private static int dogCount = 0;
     private final int MAX_RUN = 500;
@@ -14,6 +15,7 @@ public class Dog extends Animal {
             System.out.println("Расстояние не может быть отрицательным!");
             return;
         }
+
         if (distance <= MAX_RUN) {
             System.out.println(name + " пробежал " + distance + " м.");
         } else {
