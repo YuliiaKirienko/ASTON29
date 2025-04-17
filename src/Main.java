@@ -1,67 +1,77 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        // 1. Корректные массивы
-        String[][] correctArray1 = {
-                {"50", "51", "52", "53"},
-                {"54", "55", "56", "57"},
-                {"58", "59", "60", "61"},
-                {"62", "63", "64", "65"}
-        };
+        // Задача 1.
+        Dog dog1 = new Dog("Пылесос");
+        Dog dog2 = new Dog("Бублик");
+        Cat cat1 = new Cat("Веник");
+        Cat cat2 = new Cat("Шерлок");
+        Cat cat3 = new Cat("Керосин");
 
+        // Проверка действий
+        System.out.println("\nПроверка ограничений бега");
+        dog1.run(450);
+        dog2.run(600);
+        cat1.run(100);
+        cat2.run(250);
+        cat3.run(-50);
 
-        // 2. Массивы неправильного размера
-        String[][] wrongSizeArray1 = new String[4][3];  // 4x3
-        String[][] wrongSizeArray2 = new String[5][5];  // 5x5
+        System.out.println("\nПроверка ограничений плавания");
+        dog1.swim(3);
+        dog2.swim(11);
+        cat1.swim(0);
+        dog1.swim(-5);
 
-        // 3. Массивы с некорректными данными
-        String[][] wrongDataArray1 = {
-                {"50", "51", "52", "53"},
-                {"54", "55", "XX", "57"},  // Символ
-                {"58", "59", "60", "61"},
-                {"62", "63", "64", "65"}
-        };
+        // Миска
+        System.out.println("\nКормление котов:");
+        Bowl bowl = new Bowl(13);
+        ArrayList<Cat> cats = new ArrayList<>();
+        cats.add(cat1);
+        cats.add(cat2);
+        cats.add(cat3);
 
-        String[][] wrongDataArray2 = {
-                {"50", "51", "52", "53"},
-                {"54", "55", "5.6", "57"},  // Дробное число
-                {"58", "59", "60", "61"},
-                {"62", "63", "64", "65"}
-        };
-
-        String[][] wrongDataArray3 = {
-                {"50", "51", "", "53"},    // Пустая строка
-                {"54", "55", "56", "57"},
-                {"58", "59", "60", "61"},
-                {"62", "63", "64", "65"}
-        };
-
-
-
-        System.out.println("Тестирование метода");
-
-
-        System.out.println("\n Корректные массивы");
-        testArray(correctArray1, "Корректный массив 1 (50-65)");
-
-        System.out.println("\n Массивы неправильного размера");
-        testArray(wrongSizeArray1, "Массив 4x3");
-        testArray(wrongSizeArray2, "Массив 5x5");
-
-        System.out.println("\n Массивы с некорректными данными");
-        testArray(wrongDataArray1, "Массив с символом 'X'");
-        testArray(wrongDataArray2, "Массив с дробным числом");
-        testArray(wrongDataArray3, "Массив с пустой строкой");
-    }
-
-    private static void testArray(String[][] array, String description) {
-        System.out.println("\nТест: " + description);
-        try {
-            int sum = ArrayUtils.sumStringArray(array);
-            System.out.println("Сумма частей: " + sum);
-        } catch (MyArraySizeException e) {
-            System.out.println("Ошибка размера: " + e.getMessage());
-        } catch (MyArrayDataException e) {
-            System.out.println("Ошибка данных: " + e.getMessage());
+        System.out.println("\nПервое кормление:");
+        for (Cat cat : cats) {
+            cat.eat(bowl);
         }
+
+        System.out.println("\nДобавление еды");
+        bowl.addFood(20);
+        bowl.addFood(-5);
+
+        System.out.println("\nВторое кормление:");
+        for (Cat cat : cats) {
+            if (!cat.isFull()) {
+                cat.eat(bowl);
+            }
+        }
+
+        // Сытость
+        System.out.println("\nПроверка сытости:");
+        for (Cat cat : cats) {
+            System.out.println(cat.name + ": " + (cat.isFull() ? "сыт" : "голоден"));
+        }
+
+        // Количество животных
+        System.out.println("Всего животных: " + Animal.getTotalCount());
+        System.out.println("Собак: " + Dog.getDogCount());
+        System.out.println("Котов: " + Cat.getCatCount());
+        System.out.println("Остаток еды в миске: " + bowl.getFood());
+
+
+        // Задача 2.
+        GeometricShape circle = new Circle(7, "Жёлтый", "Фиолетовый");
+        GeometricShape rectangle = new Rectangle(9, 4, "Красный", "Белый");
+        GeometricShape triangle = new Triangle(3, 4, 5, "Синий", "Чёрный");
+
+        System.out.println("\nКруг");
+        circle.printInfo();
+
+        System.out.println("\nПрямоугольник");
+        rectangle.printInfo();
+
+        System.out.println("\nТреугольник");
+        triangle.printInfo();
     }
 }
