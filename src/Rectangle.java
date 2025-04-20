@@ -1,4 +1,4 @@
-//Задание 2
+// Задание 2
 public class Rectangle implements GeometricShape {
     private double width;
     private double height;

@@ -1,4 +1,4 @@
-//Задание 2
+// Задание 2
 public class Triangle implements GeometricShape {
     private final double sideA;
     private final double sideB;

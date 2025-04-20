@@ -1,4 +1,4 @@
-//Задание 1
+// Задание 1
 public class Dog extends Animal {
     private static int dogCount = 0;
     private final int MAX_RUN = 500;
