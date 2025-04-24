@@ -1,5 +1,5 @@
 // Задание 1
-public class Dog extends Animal {
+public class Dog extends Animals {
     private static int dogCount = 0;
     private final int MAX_RUN = 500;
     private final int MAX_SWIM = 10;

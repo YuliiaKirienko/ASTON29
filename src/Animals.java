@@ -1,5 +1,5 @@
 //Задание 1
-abstract class Animal {
+abstract class Animals {
     protected String name;
     private static int totalCount = 0;
 

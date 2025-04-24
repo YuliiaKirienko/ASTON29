@@ -1,5 +1,5 @@
 // Задание 1
-public class Cat extends Animal {
+public class Cat extends Animals {
     private static int catCount = 0;
     private final int MAX_RUN = 200;
     private boolean isFull;

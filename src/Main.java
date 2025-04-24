@@ -54,7 +54,7 @@ public class Main {
         }
 
         // Количество животных
-        System.out.println("Всего животных: " + Animal.getTotalCount());
+        System.out.println("Всего животных: " + Animals.getTotalCount());
         System.out.println("Собак: " + Dog.getDogCount());
         System.out.println("Котов: " + Cat.getCatCount());
         System.out.println("Остаток еды в миске: " + bowl.getFood());
