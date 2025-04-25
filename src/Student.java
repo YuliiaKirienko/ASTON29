@@ -24,12 +24,21 @@ public class Student {
         this.course++;
     }
 
-    // Геттеры
-    public String getName() { return name; }
-    public int getGroup() { return group; }
-    public int getCourse() { return course; }
-    public Map<String, Integer> getGrades() { return new HashMap<>(grades); }
+    public String getName() {
+        return name;
+    }
 
+    public int getGroup() {
+        return group;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
+    public Map<String, Integer> getGrades() {
+        return new HashMap<>(grades);
+    }
 
     @Override
     public String toString() {

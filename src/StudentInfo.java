@@ -32,7 +32,6 @@ public class StudentInfo {
         students.add(new Student("Поль Гоген", 1848, 3,
                 Map.of("Математика", 3, "Живопись", 5, "История", 4)));
 
-
         System.out.println("\nИсходный список студентов:");
         students.forEach(System.out::println);
 

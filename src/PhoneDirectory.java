@@ -24,7 +24,6 @@ public class PhoneDirectory {
         phoneBook.add("Рахманинов", "789-012");
         phoneBook.add("Моцарт", "345-678");
         phoneBook.add("Рахманинов", "901-234");
-
         phoneBook.printAllEntries();
 
         System.out.println("\nПоиск по фамилии:");
