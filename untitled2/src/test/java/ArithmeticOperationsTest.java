@@ -2,7 +2,8 @@ import org.example.ArithmeticOperations;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ArithmeticOperationsTest {
 
@@ -16,9 +17,30 @@ class ArithmeticOperationsTest {
 
             // Отрицательные числа
             "-5, -3, +, -8",
-            "-10, 4, *, -40"
+            "-10, 4, *, -40",
     })
-    void testOperationsWithNegativeNumbers(int a, int b, String operation, int expected) {
+    void testValidOperations(int a, int b, String operation, int expected) {
         assertEquals(expected, ArithmeticOperations.calculate(a, b, operation));
     }
+
+    @ParameterizedTest(name = "Деление на ноль: {0} / {1}")
+    @CsvSource({
+            "5, 0",
+    })
+    void testDivisionByZero(int a, int b) {
+        assertThrows(ArithmeticException.class, () ->
+                ArithmeticOperations.calculate(a, b, "/")
+        );
+    }
+
+    @ParameterizedTest(name = "Недопустимая операция: {0} {2} {1}")
+    @CsvSource({
+            "2, 3, %",
+    })
+    void testInvalidOperations(int a, int b, String operation) {
+        assertThrows(IllegalArgumentException.class, () ->
+                ArithmeticOperations.calculate(a, b, operation)
+        );
+    }
+
 }
