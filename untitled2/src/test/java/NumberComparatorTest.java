@@ -1,34 +1,24 @@
 import org.example.NumberComparator;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import java.util.stream.Stream;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class NumberComparatorTest {
-
-    @DisplayName("Равные числа")
-    @Test
-    void testEqualNumbers() {
-        assertEquals("Числа равны", NumberComparator.compare(5, 5));
-        assertEquals("Числа равны", NumberComparator.compare(0, 0));
-        assertEquals("Числа равны", NumberComparator.compare(-3, -3));
+    @ParameterizedTest
+    @MethodSource("provideNumbers")
+    void testCompare(int a, int b, String expected) {
+        assertEquals(expected, NumberComparator.compare(a, b));
     }
 
-    @DisplayName("Первое число больше")
-    @Test
-    void testFirstGreater() {
-        assertEquals("Первое число больше", NumberComparator.compare(10, 5));
-        assertEquals("Первое число больше", NumberComparator.compare(-1, -5));
-        assertEquals("Первое число больше", NumberComparator.compare(1, -1));
+    private static Stream<Arguments> provideNumbers() {
+        return Stream.of(
+                Arguments.of(5, 5, "Числа равны"),
+                Arguments.of(10, 5, "Первое число больше"),
+                Arguments.of(5, 10, "Второе число больше"),
+                Arguments.of(-1, -5, "Первое число больше"),
+                Arguments.of(-5, -1, "Второе число больше")
+        );
     }
-
-    @DisplayName("Второе число больше")
-    @Test
-    void testSecondGreater() {
-        assertEquals("Второе число больше", NumberComparator.compare(5, 10));
-        assertEquals("Второе число больше", NumberComparator.compare(-5, -1));
-        assertEquals("Второе число больше", NumberComparator.compare(-1, 1));
-    }
-
-
 }

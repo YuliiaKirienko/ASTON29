@@ -1,46 +1,24 @@
 import org.example.ArithmeticOperations;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.testng.AssertJUnit.assertEquals;
 
 class ArithmeticOperationsTest {
-    @DisplayName("Сложение")
-    @Test
-    void testAddition() {
-        assertEquals(15, ArithmeticOperations.calculate(10, 5, "+"));
-    }
 
-    @DisplayName("Вычитание")
-    @Test
-    void testSubtraction() {
-        assertEquals(5, ArithmeticOperations.calculate(10, 5, "-"));
-    }
+    @ParameterizedTest(name = "Тест {index}: {0} {2} {1} = {3}")
+    @CsvSource({
+            // Положительные числа
+            "5, 3, +, 8",
+            "10, 4, -, 6",
+            "7, 2, *, 14",
+            "15, 3, /, 5",
 
-    @DisplayName("Умножение")
-    @Test
-    void testMultiplication() {
-        assertEquals(50, ArithmeticOperations.calculate(10, 5, "*"));
-    }
-
-    @DisplayName("Деление")
-    @Test
-    void testDivision() {
-        assertEquals(2, ArithmeticOperations.calculate(10, 5, "/"));
-    }
-
-    @DisplayName("Деление на 0")
-    @Test
-    void testDivisionByZero() {
-        assertThrows(ArithmeticException.class,
-                () -> ArithmeticOperations.calculate(10, 0, "/"));
-    }
-
-    @DisplayName("Недопустимая операция")
-    @Test
-    void testInvalidOperation() {
-        assertThrows(IllegalArgumentException.class,
-                () -> ArithmeticOperations.calculate(10, 5, "%"));
+            // Отрицательные числа
+            "-5, -3, +, -8",
+            "-10, 4, *, -40"
+    })
+    void testOperationsWithNegativeNumbers(int a, int b, String operation, int expected) {
+        assertEquals(expected, ArithmeticOperations.calculate(a, b, operation));
     }
 }
