@@ -26,7 +26,6 @@ class PaymentPage {
     private void switchToPaymentFrame() {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(paymentFrame));
     }
-
     private void switchToDefaultContent() {
         driver.switchTo().defaultContent();
     }
