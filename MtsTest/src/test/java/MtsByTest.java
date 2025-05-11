@@ -50,7 +50,6 @@ class MtsByTest {
         } catch (TimeoutException ignored) {}
     }
 
-
     @AfterEach
     void teardown() {
         if (driver != null) {
