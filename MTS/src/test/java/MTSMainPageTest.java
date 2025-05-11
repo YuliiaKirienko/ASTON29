@@ -180,7 +180,7 @@ public class MTSMainPageTest {
         assertAll("Проверка платежной страницы",
                 () -> assertTrue(paymentPage.isPaymentFrameDisplayed(),
                         "Платежное окно не отображается"),
-                () -> assertEquals("100.00 BYN", paymentPage.getDisplayedAmount(),
+                () -> assertEquals("100.00 BYN", paymentPage.getDisplayedSum(),
                         "Неверная сумма платежа"),
                 () -> assertTrue(paymentPage.getDisplayedPhoneNumber().contains("375297777777"),
                         "Номер телефона не соответствует ожидаемому"),

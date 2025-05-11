@@ -39,7 +39,7 @@ class PaymentPage {
         }
     }
 
-    public String getDisplayedAmount() {
+    public String getDisplayedSum() {
         switchToPaymentFrame();
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(sumDisplay)).getText();
