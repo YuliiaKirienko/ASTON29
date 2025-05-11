@@ -25,10 +25,8 @@ public class PostmanEchoTest {
                 .extract().response();
 
         assertEquals(200, response.getStatusCode());
-
         assertEquals("bar1", response.jsonPath().getString("args.foo1"));
         assertEquals("bar2", response.jsonPath().getString("args.foo2"));
-
         assertEquals("https://postman-echo.com/get?foo1=bar1&foo2=bar2", response.jsonPath().getString("url"));
     }
 
@@ -63,7 +61,6 @@ public class PostmanEchoTest {
                 .post("/post")
                 .then()
                 .extract().response();
-
 
         assertEquals(200, response.getStatusCode());
         assertEquals("testuser", response.jsonPath().getString("form.username"));
