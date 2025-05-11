@@ -32,7 +32,6 @@ public class PostmanEchoTest {
         assertEquals("https://postman-echo.com/get?foo1=bar1&foo2=bar2", response.jsonPath().getString("url"));
     }
 
-
     @Test
     public void testPostRawText() {
         String rawText = "This is a raw text request";
