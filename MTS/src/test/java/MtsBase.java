@@ -137,7 +137,6 @@ public class MtsBase {
                 .getAttribute("placeholder");
     }
 
-
     public PaymentPage fillAndSubmitPaymentForm(String phone, String amount, String email) {
         open();
         acceptCookies();

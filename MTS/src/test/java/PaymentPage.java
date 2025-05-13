@@ -100,4 +100,5 @@ class PaymentPage {
             switchToDefaultContent();
         }
     }
+
 }
