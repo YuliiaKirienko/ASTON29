@@ -93,8 +93,7 @@ public class MtsBase {
         wait.until(ExpectedConditions.presenceOfElementLocated(debtAccountInput));
     }
 
-
-    public String getEnterPhoneNumber() {
+    public String getEnteredPhoneNumber() {
         WebElement phoneInputElement = wait.until(ExpectedConditions.presenceOfElementLocated(phoneInput));
         return phoneInputElement.getAttribute("value");
     }

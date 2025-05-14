@@ -5,7 +5,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 class PaymentPage {
@@ -34,6 +33,7 @@ class PaymentPage {
     private void switchToPaymentFrame() {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(paymentFrame));
     }
+
     private void switchToDefaultContent() {
         driver.switchTo().defaultContent();
     }
@@ -134,6 +134,4 @@ class PaymentPage {
             switchToDefaultContent();
         }
     }
-
-
 }
