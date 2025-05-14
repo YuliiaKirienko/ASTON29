@@ -98,6 +98,9 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         --add-opens java.base/java.util=ALL-UNNAMED
                     </argLine>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -108,7 +111,6 @@
                 </dependencies>
             </plugin>
 
-            <!-- Allure Maven Plugin -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
@@ -116,6 +118,7 @@
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
                     <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                    <allureDownloadUrl>https://github.com/allure-framework/allure2/releases/download/${allure.version}/allure-${allure.version}.zip</allureDownloadUrl>
                 </configuration>
             </plugin>
         </plugins>
