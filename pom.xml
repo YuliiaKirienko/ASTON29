@@ -24,7 +24,7 @@
             <version>4.15.0</version>
         </dependency>
 
-        <!-- JUnit 5 (без параметризации) -->
+        <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
